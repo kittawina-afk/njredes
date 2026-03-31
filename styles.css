@@ -6,12 +6,12 @@
     --sage: #7A8471;
 }
 
-/* Global smooth scrolling */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Global resets & base */
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@ body {
     line-height: 1.6;
 }
 
-/* ─── Navbar ────────────────────────────────────────────────── */
+
 .navbar {
     position: sticky;
     top: 0;
@@ -50,14 +50,14 @@ body {
     gap: 10px;
 }
 
-/* Navbar logo — tinted to taupe using filter */
+
 .logo-img--nav {
     height: 48px;
     width: auto;
     filter: invert(50%) sepia(30%) saturate(500%) hue-rotate(10deg) brightness(80%);
 }
 
-/* Footer logo — white as-is on dark background */
+
 .logo-img--footer {
     height: 44px;
     width: auto;
@@ -90,7 +90,7 @@ body {
     color: var(--taupe);
 }
 
-/* ─── Hamburger ─────────────────────────────────────────────── */
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -114,24 +114,25 @@ body {
     transform-origin: center;
 }
 
-/* Animated X when open */
+
 .hamburger.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
+
 .hamburger.active span:nth-child(2) {
     opacity: 0;
     transform: scaleX(0);
 }
+
 .hamburger.active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Book Now — only shown inside mobile menu */
 .btn-book--mobile-menu {
     display: none;
 }
 
-/* ─── btn-book base (shared styles) ────────────────────────── */
+
 .btn-book {
     background-color: #BFA891;
     color: var(--parchment);
@@ -150,7 +151,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Navbar variant — auto width, sits inline */
+
 .btn-book--nav {
     padding: 10px 24px;
     font-size: 1rem;
@@ -159,7 +160,7 @@ body {
     width: auto;
 }
 
-/* Pricing card variant — full width block */
+
 .btn-book--card {
     padding: 14px 24px;
     font-size: 1rem;
@@ -168,10 +169,10 @@ body {
     margin-top: 1rem;
 }
 
-/* ─── inicio ──────────────────────────────────────────────────── */
 .inicio {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--taupe) 0%, #a58b72 100%);
+    background: linear-gradient(135deg, rgba(145, 119, 92, 0.5) 0%, rgba(165, 139, 114, 0.5) 100%),
+    url('imgs/fundo-bg.png') center/cover no-repeat;;
     display: flex;
     align-items: center;
     color: var(--parchment);
@@ -217,6 +218,7 @@ body {
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
+    align-self: center;
 }
 
 .btn-primary:hover {
@@ -259,9 +261,6 @@ body {
     flex-shrink: 0;
 }
 
-/* ─── Sections ──────────────────────────────────────────────── */
-
-/* Full-width wrapper for sections that need a background colour */
 .section-bg {
     width: 100%;
 }
@@ -290,7 +289,7 @@ body {
     color: var(--espresso);
 }
 
-/* ─── Pricing ───────────────────────────────────────────────── */
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -358,7 +357,7 @@ body {
     flex-shrink: 0;
 }
 
-/* Badge */
+
 .badge {
     position: absolute;
     top: -12px;
@@ -374,7 +373,7 @@ body {
     white-space: nowrap;
 }
 
-/* ─── Team ──────────────────────────────────────────────────── */
+
 .bg-sand {
     background-color: var(--sand);
 }
@@ -423,7 +422,7 @@ body {
     color: var(--espresso);
 }
 
-/* ─── Contact Form ──────────────────────────────────────────── */
+
 .contact-form {
     max-width: 720px;
     margin: 0 auto;
@@ -452,7 +451,6 @@ body {
     padding: 14px 18px;
     border: 2px solid var(--sand);
     border-radius: 12px;
-    /* min 16px prevents iOS auto-zoom on focus */
     font-size: max(16px, 1.05rem);
     font-family: inherit;
     transition: border-color 0.3s ease;
@@ -502,7 +500,7 @@ body {
     font-weight: 600;
 }
 
-/* ─── Footer ────────────────────────────────────────────────── */
+
 .footer {
     background-color: var(--espresso);
     color: var(--parchment);
@@ -524,7 +522,7 @@ body {
     font-size: 0.95rem;
 }
 
-/* logo-sub in footer should be white */
+
 .footer .logo-sub {
     color: var(--parchment);
     opacity: 0.9;
@@ -553,7 +551,6 @@ body {
     gap: 1rem;
 }
 
-/* SVG social icons */
 .social-icon {
     color: var(--parchment);
     display: inline-flex;
@@ -567,8 +564,9 @@ body {
     opacity: 1;
 }
 
-/* ─── Responsive — Tablet (≤ 900px) ────────────────────────── */
+
 @media (max-width: 900px) {
+
     .pricing-grid,
     .team-grid {
         grid-template-columns: 1fr;
@@ -578,15 +576,15 @@ body {
     }
 }
 
-/* ─── Responsive — Mobile (≤ 768px) ────────────────────────── */
+
 @media (max-width: 768px) {
 
-    /* Navbar */
+
     .nav-container {
         padding: 0.85rem 1.25rem;
     }
 
-    /* Show hamburger, hide desktop Book Now */
+
     .hamburger {
         display: flex;
     }
@@ -595,7 +593,7 @@ body {
         display: none;
     }
 
-    /* Mobile nav drawer */
+
     .nav-links {
         display: none;
         position: absolute;
@@ -623,7 +621,7 @@ body {
         font-size: 1.05rem;
     }
 
-    /* Book Now inside mobile menu */
+
     .btn-book--mobile-menu {
         display: block;
         margin-top: 1rem;
@@ -659,7 +657,7 @@ body {
         text-align: center;
     }
 
-    /* Sections */
+
     .section {
         padding: 3.5rem 1.25rem;
     }
@@ -668,13 +666,11 @@ body {
         font-size: 1rem;
     }
 
-    /* Form */
     .form-grid {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
-    /* Footer */
     .footer-container {
         flex-direction: column;
         align-items: flex-start;
@@ -691,7 +687,6 @@ body {
     }
 }
 
-/* ─── Responsive — Small mobile (≤ 400px) ──────────────────── */
 @media (max-width: 400px) {
     .logo-img--nav {
         height: 38px;
