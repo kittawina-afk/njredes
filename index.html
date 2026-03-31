@@ -35,7 +35,7 @@
 
     <header id="inicio" class="inicio">
         <div class="inicio-content">
-            <h1 class="inicio-title">NJ Gestão de Redes Sociais</h1>
+            <h1 class="inicio-title">Crescimento real começa nas Redes Sociais</h1>
             <p class="inicio-subtitle">Transformamos as suas redes sociais em motores de crescimento real. Estratégia,
                 conteúdo e resultados que convertem.</p>
             <div class="inicio-buttons">
@@ -216,23 +216,24 @@
         </div>
     </footer>
 </body>
- 
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("nav-links");
- 
-        hamburger.addEventListener("click", () => {
-            const isOpen = navLinks.classList.toggle("open");
-            hamburger.setAttribute("aria-expanded", isOpen);
-            hamburger.classList.toggle("active", isOpen);
+
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        hamburger.setAttribute("aria-expanded", isOpen);
+        hamburger.classList.toggle("active", isOpen);
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+            hamburger.classList.remove("active");
+            hamburger.setAttribute("aria-expanded", "false");
         });
- 
-        navLinks.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("open");
-                hamburger.classList.remove("active");
-                hamburger.setAttribute("aria-expanded", "false");
-            });
-        });
-    </script>
+    });
+</script>
+
 </html>
