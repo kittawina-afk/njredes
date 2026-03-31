@@ -149,8 +149,8 @@
         </div>
 
         <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="809c3262-c19c-4c4b-8518-9363ed60c87d">
-        <div class="form-grid">
+            <input type="hidden" name="access_key" value="809c3262-c19c-4c4b-8518-9363ed60c87d">
+            <div class="form-grid">
                 <div class="form-group">
                     <label for="name">Nome</label>
                     <input type="text" id="name" name="name" required>
@@ -167,22 +167,22 @@
                     <label for="phone">Telefone</label>
                     <input type="tel" id="phone" name="phone">
                 </div>
-        </div>
+            </div>
 
-        <div class="form-group">
-            <label for="message">Qual o seu objetivo?</label>
-            <textarea id="message" name="message" rows="5"
-                placeholder="Ex: Quero aumentar o engajamento no Instagram e lançar Reels..."></textarea>
-        </div>
+            <div class="form-group">
+                <label for="message">Qual o seu objetivo?</label>
+                <textarea id="message" name="message" rows="5"
+                    placeholder="Ex: Quero aumentar o engajamento no Instagram e lançar Reels..."></textarea>
+            </div>
 
-        <button type="submit" class="btn-submit" id="submit-btn">
-            Enviar Mensagem
-        </button>
+            <button type="submit" class="btn-submit" id="submit-btn">
+                Enviar Mensagem
+            </button>
 
-        <p id="form-success" class="success-message">✅ Mensagem enviada com sucesso! Entraremos em contacto em
-            breve.</p>
-        <p id="form-error" class="error-message">❌ Erro ao enviar a mensagem. Por favor tente novamente ou
-            contacte-nos diretamente.</p>
+            <p id="form-success" class="success-message">✅ Mensagem enviada com sucesso! Entraremos em contacto em
+                breve.</p>
+            <p id="form-error" class="error-message">❌ Erro ao enviar a mensagem. Por favor tente novamente ou
+                contacte-nos diretamente.</p>
         </form>
     </section>
 
@@ -190,7 +190,8 @@
         <div class="footer-container">
             <div class="footer-left">
                 <div class="logo">
-                    <img src="imgs/nj-transparente.png" alt="NJ Gestão de Redes Sociais" class="logo-img logo-img--footer">
+                    <img src="imgs/nj-transparente.png" alt="NJ Gestão de Redes Sociais"
+                        class="logo-img logo-img--footer">
                     <span class="logo-sub">Gestão de Redes Sociais</span>
                 </div>
             </div>
@@ -215,5 +216,23 @@
         </div>
     </footer>
 </body>
-
+ 
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+ 
+        hamburger.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+            hamburger.setAttribute("aria-expanded", isOpen);
+            hamburger.classList.toggle("active", isOpen);
+        });
+ 
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                hamburger.classList.remove("active");
+                hamburger.setAttribute("aria-expanded", "false");
+            });
+        });
+    </script>
 </html>
